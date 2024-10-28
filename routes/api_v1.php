@@ -7,13 +7,15 @@ use PHPUnit\Event\Code\Test;
 use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\ProductController;
+use App\Http\Controllers\Api\V1\ProductGroupController;
 
 
 
 Route::prefix('v1')->group(function () {
     // Route::apiResource('products', ProductController::class)->only(['index', 'store', 'show', 'update'])->middleware('auth:sanctum');
 
-    Route::post('/products', [ProductController::class, 'index']);
+    Route::post('/products', [ProductController::class, 'index']); 
+    Route::post('/products-by-group', [ProductGroupController::class, 'fetchProductGroups']);
 });
 
 

@@ -23,9 +23,12 @@ class ProductController extends Controller
 
             // Step 2: Define payload and fetch products
             $payload = [
-                ["name" => "timestamp", "type" => "C", "value" => "202012310000000"],
+                // ["name" => "timestamp", "type" => "C", "value" => "202012310000000"],
                 ["name" => "getbilder", "type" => "L", "value" => "true"],
-                ["name" => "getpreis", "type" => "L", "value" => "true"]
+                ["name" => "getpreis", "type" => "L", "value" => "true"],
+                ["name" => "artikelids", "type" => "C", "value" => "48110,48113,48117"]
+                
+                
             ];
 
             $productResponse = Http::withToken($token)
