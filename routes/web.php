@@ -43,6 +43,6 @@ Route::prefix('admin')->group(function () {
 //     })->name('dashboard');
 // });
 
-Route::get('/login', function () {
-    return abort(404); // or redirect to a custom page
-})->name('login');
+// Route::get('/login', function () {
+//     return abort(404); // or redirect to a custom page
+// })->name('login');
