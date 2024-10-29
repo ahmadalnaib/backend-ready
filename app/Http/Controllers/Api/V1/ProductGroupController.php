@@ -48,7 +48,7 @@ class ProductGroupController extends Controller
         $groupPayload = [
             ["name" => "timestamp", "type" => "C", "value" => "19700101000000000"],
             ["name" => "getstructure", "type" => "L", "value" => "true"],
-            ["name" => "getbilder" ,"type" => "L", "value" =>"true"]
+            // ["name" => "getbilder" ,"type" => "L", "value" =>"true"]
         ];
 
         $groupResponse = Http::withToken($token)
@@ -70,16 +70,20 @@ class ProductGroupController extends Controller
         }
 
         $produktgruppen = $groups['body']['data']['object']['data']['output']['productgroups']['productgroupitem'];
+
+    
         
         $homeNeuGroup = array_filter($produktgruppen, function($group) {
             return strpos($group['bezeichnung'], 'Home_NEU') !== false;
         });
 
+    
         if (empty($homeNeuGroup)) {
             return null;
         }
 
         $homeNeuGroup = array_values($homeNeuGroup)[0];
+       
         $childProdGroups = $homeNeuGroup['childprodgroups']['childprodgroup'] ?? [];
 
         return array_filter($produktgruppen, function($group) use ($childProdGroups) {
