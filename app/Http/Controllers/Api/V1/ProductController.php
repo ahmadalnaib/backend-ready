@@ -49,7 +49,7 @@ class ProductController extends Controller
         $payload = [
             ["name" => "getbilder", "type" => "L", "value" => "true"],
             ["name" => "getpreis", "type" => "L", "value" => "true"],
-            ["name" => "artikelids", "type" => "C", "value" => "48110,48113,48117"]
+            ["name" => "artikelids", "type" => "C", "value" => "818,819,9166,9169,9171,9172,9175,9259,9276,17497,17791,17931,17932,17945,18006,18015,18035,18039,18095,18125,18296,18311,18325,18326,18329,18363,18381,18382,18393,18395,18397,18398,18400,18403,18406,18411,18436,18535,18538,18601,18602,18619,18621,18622"]
         ];
 
         $productResponse = Http::withToken($token)
