@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         ResetPassword::createUrlUsing(function ($user, string $token) {
-            return env('CLIENT_URL'). '/reset-password?email='.$user->email .'&token='. $token;
+            return env('CLIENT_URL'). '/auth/reset-password?email='.$user->email .'&token='. $token;
         });
         JsonResource::withoutWrapping();
     }
